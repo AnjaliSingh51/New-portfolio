@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+/* first page */
+.contanier{
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contanier::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: #ff9dcf;
+}
+.contanier .hero{
+    position: relative;
+    z-index: 10;
+    height: 85vh;
+    width: 75%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border: 3px solid #ff9dcf;
+    border-radius: 20px;
+    box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.15);
+    padding: 0 40px 0 80px;
+}
+.hero nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+}
+.hero nav .logo{
+    color: #801f82;
+    font-size: 45px;
+    font-weight: bold;
+}
+.hero nav .nav-links a {
+    color: #242424;
+    margin-left: 40px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+.hero nav .nav-links a:hover,
+.hero nav .nav-links a.active{
+    color: #801f82;
+}
+.hero .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+}
+.hero .content .div-text{
+    width: 40%;
+}
+.hero .content .div-text h1{
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: #fff;
+}
+.hero .content .div-text h4{
+    color: #801f82;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.hero .content .div-text p{
+    color: #4f4f4f;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+.hero .content .div-text .btn{
+    padding: 15px 20px;
+    background-color: #801f82;
+    border: 2px solid #801f82;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.hero .content .div-text .btn:hover{
+    color: #801f82;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+.soc-link{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+.soc-link a i{
+    font-size: 25px;
+    cursor: pointer;
+    color: #801f82;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+.soc-link a i:hover{
+    color: #ff9dcf;
+}
+
+.hero .content .div-img{
+    width: 40%;
+}
+.hero .content .div-img img{
+    width: 100%;
+}
+/* animation */
+
+.hero .logo,
+.hero .content .div-text h1,
+.hero .content .div-text h4,
+.hero .content .div-text .btn{
+    position: relative;
+    top: 50px;
+    animation: slide-top .5s linear forwards;
+    opacity: 0;
+}
+.hero .logo{
+    animation-delay: 0.2s;
+}
+.hero .content .div-text h1{
+    animation-delay: 0.5s;
+}
+.hero .content .div-text h4{
+    animation-delay: 0.9s;
+}
+.hero .content .div-text .btn{
+    animation-delay: 1.8s;
+}
+@keyframes slide-top{
+    0%{
+        top: 50px;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.hero .content .div-text p{
+    position: relative;
+    left: 100px;
+    animation: slide-right .5s linear forwards;
+    animation-delay: 1.3s;
+    opacity: 0;
+}
+@keyframes slide-right{
+    0%{
+        left: 100px;
+        opacity: 0;
+    }
+    100%{
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.hero .content .div-img img{
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fade-img .5s linear forwards;
+    animation-delay: 2.1s;
+}
+@keyframes fade-img{
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+  .projects {
+    background-color: #3498db;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.project-item {
+    margin: 20px;
+    padding: 20px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.project-item img {
+    width: 200px; /* Set a fixed width for the images */
+    height: auto;
+    border-radius: 8px; /* Add border-radius to the images */
+    margin-right: 20px; /* Add margin for spacing between text and image */
+}
+
+* {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.1s ease-in;
+}
+
+.container {
+    background-image: linear-gradient(to right,  #e690e9, rgb(233, 37, 233),  #f084e1);
+    padding: 25px 20px 25px 30px;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 15px;
+    color: #020202;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.box {
+    box-shadow: 0 7px 13px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: #ebdae5;
+    text-align: center;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+
+.box img {
+    height: 70px;
+}
+
+.box h3 {
+    color: #444;
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.box p {
+    color: #777;
+    font-size: 15px;
+}
+
+.box .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background: #310222;
+    color: #fff; 
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    text-transform: uppercase;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+  @media (max-width: 768px) {
+            .contanier::before {
+                width: 100%;
+                height: 50%;
+            }
+
+            .hero {
+                width: 90%;
+                padding: 0 20px;
+            }
+
+            .hero nav .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                text-align: center;
+            }
+
+            .hero nav .nav-links a {
+                margin: 0;
+                padding: 10px;
+            }
+
+            .hero nav .burger-menu {
+                display: block;
+            }
+
+            .hero .content {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 20px;
+            }
+
+            .hero .content .div-text,
+            .hero .content .div-img {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero .content .div-img img {
+                width: 80%;
+                margin-top: 20px;
+            }
+
+            .soc-link {
+                right: 5%;
+                flex-direction: row;
+                transform: translateY(0);
+                top: 0;
+            }
+        }
+ 
+ 
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    html{
+        font-size: 14px;
+    }
+    .container {
+        padding: 10px 20x 70px 20px;
+      }
+    .box-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .box {
+        padding: 20px 10px;
+          }    }
+ @media (min-width: 481px) and (max-width: 768px) {
+    html{
+        font-size: 11px;
+    }
+    .container {
+        padding: 10px 20x 60px 20px;
+      }
+    .box-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .box {
+        padding: 17px 10px;
+          }    }
+@media (min-width: 320px) and (max-width: 480px) {
+  /* CSS styles for mobile devices */
+  html {
+    font-size: 8px;
+  }
+  .container {
+    padding: 10px 20px 50px 20px;
+  }
+  .box-container {
+    grid-template-columns: 1fr;
+  }
+  .box {
+    padding: 15px 5px;
+  }
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+.contact{
+    background-color: #6a1a7a;
+    display: grid;
+}
+
+h1{
+    color: white;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+}
+input{
+    color: antiquewhite;
+    width: 70%;
+    margin-left: 12%;
+    font-size: 20px;
+    padding: 16px 16px;
+    border-radius: 10px;
+    border-color: #060616;
+    margin-bottom: 20px;
+}
+
+textarea{
+    background-color: #f9f9f9;
+    width: 70%;
+    margin-left: 12%;
+    font-size: 20px;
+    padding: 16px 16px;
+    border-radius: 10px;
+    border-color: #060616;
+    margin-bottom: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input:focus-within{
+    outline: none;
+    border-color: #5bd182;
+    border-width: 3px;
+}
+textarea:focus-within{
+    outline: none;
+    border-color: #D63484;
+    border-width: 3px;
+}
+    
+  button {
+    background-color: #823ec2;
+    border-radius: 20px;
+    border-color: black;
+    width: 50%;
+    font-size: 22px;
+    padding: 10px 18px;
+    color: #310222;
+    text-align: right;
+    display: flex;
+    margin: auto;
+  }
+  
+  button:hover {
+    opacity: 80%;
+    cursor: pointer;
+    background-color: #0069d9;
+  }
+
+
+
+    </style>
+
+    
+</head>
+<body>
+    <!-- navBar -->
+    <div class="contanier">
+        <div class="hero">
+            <nav>
+                <a href="#" class="logo"></a>
+
+                <div class="nav-links">
+                    <a class="active" href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#project">Projects</a>
+                    <a href="#contact">Contacts</a>
+                </div>
+            </nav>
+
+
+            <div class="content">
+                <div class="div-text">
+                    <h1>Hi, I'am Anjali Singh</h1>
+                    <h4> Frontend Developer</h4>
+                    <p>An aspiring coder. Dedicated to mastering languages like Python, JavaScript, and more.Committed to continuous learning, I embrace challenges as opportunities for growth. Eager to connect with the coding community, let's grow together!</p>
+                    <a href="#project" class="btn">My Works</a>
+                </div>
+
+                <div class="div-img">
+                    <img src="https://i.ibb.co/8mF01c5/Cute-Anime-Cartoon-Illustration-Girl-Avatar.png" alt="">
+                </div>
+            </div>
+
+            <div class="soc-link">
+                <a href="https://www.linkedin.com/in/anjali-singh51/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="anjalisingh22@navgurukul.org" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/AnjaliSingh51" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    
+  
+
+    <div id="project" class="container">
+
+        <h1>My Projects</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="https://media.licdn.com/dms/image/D4D2DAQFHHosTtHewFg/profile-treasury-image-shrink_1920_1920/0/1698353599139?e=1707508800&v=beta&t=mi4FoQ86XFglib4Nj8KeulV0OELlB3fqMN7MnNFo4VY" alt="">
+                <h3>LightBulb On-Off</h3>
+                <p>Made a light on-off project using HTML and CSS for a simple and interactive experience.</p>
+                <a href="https://anjalisingh51.github.io/LightOnOff/" target="_blank" class="btn">View Site</a>
+            </div>
+
+            <div class="box">
+                <img src="https://i.ibb.co/1GR6HkB/Screenshot-from-2024-02-03-10-46-56.png" alt="">
+                <h3>Contact Form</h3>
+                <p>Crafted a sleek contact form project with HTML and CSS for seamless user communication and interaction.</p>
+                <a href="https://anjalisingh51.github.io/Flexnavigation/" target="_blank" class="btn">View Site</a>
+            </div>
+
+            <div class="box">
+                <img src="https://media.licdn.com/dms/image/D4D2DAQEgX5iaOtc2eA/profile-treasury-image-shrink_1920_1920/0/1692796463014?e=1707508800&v=beta&t=WQcUF-Xdp3kspm9N0JhdKsyQtxqGrEOyjfiT_N8bFNE" alt="">
+
+                <h3>FoodBlog Website</h3>
+                <p>Built a dynamic food blog website with HTML, CSS, and JS, featuring engaging design and functionality. </p>
+                <a href="https://anjalisingh51.github.io/FoodBlog/" target="_blank" class="btn">View Site</a>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="contact">
+        <h1> Contact Form </h1>
+        <input type="text" name="first" placeholder="First Name" required>
+        <input type="text" name="last" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+       <textarea rows="5" cols="60" name="first" placeholder="First Name" required></textarea>
+        <button type="submit"> Send Message</button>
+    </div>
+    
+
+   
+
+</body>
+</html>
